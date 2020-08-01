@@ -5,9 +5,12 @@ class Player {
     this.wins = object.wins;
   }
   saveWinsToStorage() {
-    
+    var s = JSON.stringify(object.wins)
+    localStorage.set()
   }
   retrieveWinsFromStorage() {
+    var wins = JSON.parse()
+    this.wins =
 
   }
 }
