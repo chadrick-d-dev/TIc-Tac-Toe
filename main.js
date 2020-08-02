@@ -12,8 +12,7 @@ var sq9 = document.querySelector("#square-9");
 var rtHeader = document.querySelector(".right-title-header");
 var lftHeader = document.querySelector(".left-title-header");
 var alert = document.querySelector(".game-alert");
-var turn = true;
-var currentGame;
+var currentGame = new Game();
 
 sq1.addEventListener("click", sqClick);
 sq2.addEventListener("click", sqClick);
@@ -27,11 +26,11 @@ sq9.addEventListener("click", sqClick);
 
 function sqClick(event) {
   var target = event.target;
-  if (target.innerText === "" && turn === true) {
+  if (target.innerText === "" && currentGame.turn === true) {
     target.innerText = "🐯";
-    turn = false;
-  } else if (target.innerText === "" && turn === false) {
+    currentGame.turn = false;
+  } else if (target.innerText === "" && currentGame.turn === false) {
     target.innerText = "🦁";
-    turn = true;
+    currentGame.turn = true;
   }
 }
