@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 2fr 1fr;
 }
 
+
 .left {
   height: 100%;
   grid-column: 1 / 2;
@@ -23,6 +24,7 @@
 
 .title-icon {
   font-size: 50px;
+  font-style: normal;
 }
 
 .left-title-header {
@@ -81,6 +83,7 @@
 
 .right-icon {
   font-size: 50px;
+  font-style: normal;
 }
 
 .right-title-header {
