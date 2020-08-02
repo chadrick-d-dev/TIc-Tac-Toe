@@ -6,38 +6,41 @@
   <link rel="stylesheet" href="styles.css">
   <title>Tic Tac Toe</title>
 </head>
-<body>
-  <section class="main">
-    <section class="left">
-      <section class="left-title">
-        <i class="title-icon">🧠</i>
-        <h1 class="left-title-header">wins</h1>
+  <body>
+    <section class="main">
+      <section class="left">
+        <section class="left-title">
+          <i class="title-icon">🦁</i>
+          <h1 class="left-title-header">wins</h1>
+        </section>
+        <section class="left-win-grid">
+        </section>
       </section>
-      <section class="left-win-grid">
+      <section class="middle">
+        <h1 class="game-alert hidden">Winner</h1>
+        <section class="game-grid">
+          <div class="game-square" id="square-1"></div>
+          <div class="game-square" id="square-2"></div>
+          <div class="game-square" id="square-3"></div>
+          <div class="game-square" id="square-4"></div>
+          <div class="game-square" id="square-5"></div>
+          <div class="game-square" id="square-6"></div>
+          <div class="game-square" id="square-7"></div>
+          <div class="game-square" id="square-8"></div>
+          <div class="game-square" id="square-9"></div>
+        </section>
+      </section>
+      <section class="right">
+        <section class="right-title">
+          <i class="title-icon">🐯</i>
+          <h1 class="right-title-header">wins</h1>
+        </section>
+        <section class="right-win-grid">
+        </section>
       </section>
     </section>
-    <section class="middle">
-      <h1 class="game-alert hidden">Winner</h1>
-      <section class="game-grid">
-        <div class="game-square" id="square-1"></div>
-        <div class="game-square" id="square-2"></div>
-        <div class="game-square" id="square-3"></div>
-        <div class="game-square" id="square-4"></div>
-        <div class="game-square" id="square-5"></div>
-        <div class="game-square" id="square-6"></div>
-        <div class="game-square" id="square-7"></div>
-        <div class="game-square" id="square-8"></div>
-        <div class="game-square" id="square-9"></div>
-      </section>
-    </section>
-    <section class="right">
-      <section class="right-title">
-        <i class="title-icon">🧟‍♂️</i>
-        <h1 class="right-title-header">wins</h1>
-      </section>
-      <section class="right-win-grid">
-      </section>
-    </section>
-  </section>
-</body>
+    <script src="./game.js"></script>
+    <script src="./player.js"></script>
+    <script src="./main.js"></script>
+  </body>
 </html>
