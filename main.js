@@ -9,7 +9,11 @@ var sq6 = document.querySelector("#square-6");
 var sq7 = document.querySelector("#square-7");
 var sq8 = document.querySelector("#square-8");
 var sq9 = document.querySelector("#square-9");
+var rtHeader = document.querySelector(".right-title-header");
+var lftHeader = document.querySelector(".left-title-header");
+var alert = document.querySelector(".game-alert");
 var turn = true;
+var currentGame;
 
 sq1.addEventListener("click", sqClick);
 sq2.addEventListener("click", sqClick);
