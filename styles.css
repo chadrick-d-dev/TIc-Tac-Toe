@@ -60,10 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.game-icon {
-  height: 30px;
+  font-size: 90px;
 }
 
 .right {
