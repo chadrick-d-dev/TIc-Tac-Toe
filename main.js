@@ -34,3 +34,15 @@ function sqClick(event) {
     currentGame.turn = true;
   }
 }
+
+function newGame(gameObject) {
+  sq1.innerText = "";
+  sq2.innerText = "";
+  sq3.innerText = "";
+  sq4.innerText = "";
+  sq5.innerText = "";
+  sq6.innerText = "";
+  sq7.innerText = "";
+  sq8.innerText = "";
+  sq9.innerText = "";
+}
