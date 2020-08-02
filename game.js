@@ -2,6 +2,7 @@ class Game {
   constructor(sq1, sq2, sq3, sq4, sq5, sq7, sq8, sq9) {
     this.player1 = new Player({ id: 'Player 1', token: '🦁', wins: 0 });
     this.player2 = new Player({ id: 'Player 2', token: '🐯', wins: 0 });
+    this.turn = true;
     this.sq1 = sq1;
     this.sq2 = sq2;
     this.sq3 = sq3;
