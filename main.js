@@ -11,7 +11,7 @@ var sq8 = document.querySelector("#square-8");
 var sq9 = document.querySelector("#square-9");
 var rtHeader = document.querySelector(".right-title-header");
 var lftHeader = document.querySelector(".left-title-header");
-var alert = document.querySelector(".game-alert");
+var gameAlert = document.querySelector(".game-alert");
 var currentGame = new Game();
 
 sq1.addEventListener("click", sqClick);
@@ -29,13 +29,19 @@ function sqClick(event) {
   if (target.innerText === "" && currentGame.turn === true) {
     target.innerText = "🐯";
     currentGame.turn = false;
+    gameAlert.innerText = `It's 🦁's turn`;
+    currentGame.gameDone(event);
   } else if (target.innerText === "" && currentGame.turn === false) {
     target.innerText = "🦁";
     currentGame.turn = true;
+    gameAlert.innerText = `It's 🐯's Turn`;
+    currentGame.gameDone(event);
   }
 }
 
-function newGame(gameObject) {
+function newGame() {
+  currentGame.turn = true;
+  gameAlert.innerText = `It's 🐯's Turn`
   sq1.innerText = "";
   sq2.innerText = "";
   sq3.innerText = "";
