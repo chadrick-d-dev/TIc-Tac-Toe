@@ -16,7 +16,7 @@ var rtGrid = document.querySelector(".right-win-grid");
 var lftGrid = document.querySelector(".left-win-grid");
 var currentGame;
 
-window.onload = newGame();
+window.onload = (currentGame = new Game());
 sq1.addEventListener("click", sqClick);
 sq2.addEventListener("click", sqClick);
 sq3.addEventListener("click", sqClick);
@@ -40,22 +40,6 @@ function sqClick(event) {
     gameAlert.innerText = `It's 🐯's Turn`;
     currentGame.gameDone(event);
   }
-}
-
-function newGame() {
-  currentGame = new Game();
-  currentGame.turn = true;
-  currentGame.gameWon = false;
-  gameAlert.innerText = `It's 🐯's Turn`
-  sq1.innerText = "";
-  sq2.innerText = "";
-  sq3.innerText = "";
-  sq4.innerText = "";
-  sq5.innerText = "";
-  sq6.innerText = "";
-  sq7.innerText = "";
-  sq8.innerText = "";
-  sq9.innerText = "";
 }
 
 function copyWin(side) {
