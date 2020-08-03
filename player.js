@@ -2,7 +2,8 @@ class Player {
   constructor(object) {
     this.id = object.id;
     this.token = object.token;
-    this.wins = object.wins;
+    this.wins = 0;
+    this.winArray= [];
   }
   // saveWinsToStorage() {
   //   var s = JSON.stringify(object.wins)
