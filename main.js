@@ -12,8 +12,11 @@ var sq9 = document.querySelector("#square-9");
 var rtHeader = document.querySelector(".right-title-header");
 var lftHeader = document.querySelector(".left-title-header");
 var gameAlert = document.querySelector(".game-alert");
-var currentGame = new Game();
+var rtGrid = document.querySelector(".right-win-grid");
+var lftGrid = document.querySelector(".left-win-grid");
+var currentGame;
 
+window.onload = newGame();
 sq1.addEventListener("click", sqClick);
 sq2.addEventListener("click", sqClick);
 sq3.addEventListener("click", sqClick);
@@ -26,12 +29,12 @@ sq9.addEventListener("click", sqClick);
 
 function sqClick(event) {
   var target = event.target;
-  if (target.innerText === "" && currentGame.turn === true) {
+  if (target.innerText === "" && currentGame.turn === true && currentGame.gameWon === false) {
     target.innerText = "🐯";
     currentGame.turn = false;
     gameAlert.innerText = `It's 🦁's turn`;
     currentGame.gameDone(event);
-  } else if (target.innerText === "" && currentGame.turn === false) {
+  } else if (target.innerText === "" && currentGame.turn === false && currentGame.gameWon === false) {
     target.innerText = "🦁";
     currentGame.turn = true;
     gameAlert.innerText = `It's 🐯's Turn`;
@@ -40,7 +43,9 @@ function sqClick(event) {
 }
 
 function newGame() {
+  currentGame = new Game();
   currentGame.turn = true;
+  currentGame.gameWon = false;
   gameAlert.innerText = `It's 🐯's Turn`
   sq1.innerText = "";
   sq2.innerText = "";
@@ -51,4 +56,18 @@ function newGame() {
   sq7.innerText = "";
   sq8.innerText = "";
   sq9.innerText = "";
+}
+
+function copyWin(side) {
+  side.insertAdjacentHTML('beforeend', `<section class="miniGame">
+    <div class="mini-square">${sq1.innerText}</div>
+    <div class="mini-square">${sq2.innerText}</div>
+    <div class="mini-square">${sq3.innerText}</div>
+    <div class="mini-square">${sq4.innerText}</div>
+    <div class="mini-square">${sq5.innerText}</div>
+    <div class="mini-square">${sq6.innerText}</div>
+    <div class="mini-square">${sq7.innerText}</div>
+    <div class="mini-square">${sq8.innerText}</div>
+    <div class="mini-square">${sq9.innerText}</div>
+  </section>` );
 }
