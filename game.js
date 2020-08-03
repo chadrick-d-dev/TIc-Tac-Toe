@@ -1,5 +1,6 @@
 class Game {
   constructor() {
+    this.id = Date.now();
     this.player1 = new Player({ id: 'Player 1', token: '🦁', wins: 0, winArray: [] });
     this.player2 = new Player({ id: 'Player 2', token: '🐯', wins: 0, winArray: [] });
     this.turn = true;
@@ -20,8 +21,8 @@ class Game {
       rtHeader.innerText = `${this.player2.wins} wins`;
       gameAlert.innerText = `🐯 Wins!`;
       setTimeout(function() {newGame();}, 3000);
-      this.gameWon = false;
     }else if ((sq1.innerText === "🦁" || sq1.innerText === "🐯") && (sq2.innerText === "🦁" || sq2.innerText === "🐯") && (sq3.innerText === "🦁" || sq3.innerText === "🐯") && (sq4.innerText === "🦁" || sq4.innerText === "🐯") && (sq5.innerText === "🦁" || sq5.innerText === "🐯") && (sq6.innerText === "🦁" || sq6.innerText === "🐯") && (sq7.innerText === "🦁" || sq7.innerText === "🐯") && (sq8.innerText === "🦁" || sq8.innerText === "🐯") && (sq9.innerText === "🦁" || sq9.innerText === "🐯")) {
+      this.gameWon = true;
       gameAlert.innerText = `It's a draw!`;
       setTimeout(function() {newGame();}, 3000);
     }
