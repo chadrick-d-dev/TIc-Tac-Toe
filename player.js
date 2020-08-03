@@ -7,13 +7,13 @@ class Player {
   }
   saveWinsToStorage() {
     if (gameAlert.innerText === `🦁 Wins!`) {
-      var winsToSave = [currentGame.player1.wins, currentGame.player1.boardArray];
-      var winsString = JSON.stringify(winsToSave);
-      localStorage.set("player1Storage", winsString);
+      var player = currentGame.player1;
+      var playerString = JSON.stringify(player);
+      localStorage.set('player1Storage', playerString);
     } else if (gameAlert.innerText === `🐯 Wins!`) {
-      var winsToSave = [currentGame.player2.wins, currentGame.player2.boardArray];
-      var winsString = JSON.stringify(winsToSave);
-      localStorage.set("player2Storage", winsString);
+      var player = currentGame.player2;
+      var playerString = JSON.stringify(player);
+      localStorage.set('player2Storage', playerString);
     }
   }
   // retrieveWinsFromStorage() {
