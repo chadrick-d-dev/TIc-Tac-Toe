@@ -17,12 +17,4 @@ var lftGrid = document.querySelector(".left-win-grid");
 var currentGame;
 
 window.onload = (currentGame = new Game());
-sq1.addEventListener("click", currentGame.sqClick);
-sq2.addEventListener("click", currentGame.sqClick);
-sq3.addEventListener("click", currentGame.sqClick);
-sq4.addEventListener("click", currentGame.sqClick);
-sq5.addEventListener("click", currentGame.sqClick);
-sq6.addEventListener("click", currentGame.sqClick);
-sq7.addEventListener("click", currentGame.sqClick);
-sq8.addEventListener("click", currentGame.sqClick);
-sq9.addEventListener("click", currentGame.sqClick);
+gameGrid.addEventListener("click", currentGame.sqClick);
