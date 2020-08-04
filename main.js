@@ -39,8 +39,9 @@ function sqClick(event) {
 }
 
 function resetBoard() {
-  this.turn = true;
-  this.gameWon = false;
+  currentGame.turn = true;
+  currentGame.gameWon = false;
+  currentGame.clearGameBoard();
   gameAlert.innerText = `It's 🐯's Turn`
   sq1.innerText = "";
   sq2.innerText = "";
