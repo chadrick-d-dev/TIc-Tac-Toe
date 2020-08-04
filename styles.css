@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 2fr 1fr;
 }
 
+
 .left {
   height: 100%;
   grid-column: 1 / 2;
@@ -23,12 +24,20 @@
 
 .title-icon {
   font-size: 50px;
+  font-style: normal;
 }
 
 .left-title-header {
   font-size: 30px;
   margin-top: 5px;
   margin-bottom: 0px;
+}
+
+.left-win-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
 .middle {
@@ -79,12 +88,31 @@
   align-items: center;
 }
 
-.right-icon {
-  font-size: 50px;
-}
-
 .right-title-header {
   font-size: 30px;
   margin-top: 5px;
   margin-bottom: 0px;
+}
+
+.right-win-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.mini-game {
+  background: white;
+  max-height: 90px;
+  max-width: 90px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mini-square {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
