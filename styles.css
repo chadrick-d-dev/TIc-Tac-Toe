@@ -103,8 +103,8 @@
 
 .mini-game {
   background: white;
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 90px;
+  max-width: 90px;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
