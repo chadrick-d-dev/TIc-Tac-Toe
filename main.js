@@ -41,17 +41,3 @@ function sqClick(event) {
     currentGame.gameDone(event);
   }
 }
-
-function copyWin(side) {
-  side.insertAdjacentHTML('beforeend', `<section class="miniGame">
-    <div class="mini-square">${sq1.innerText}</div>
-    <div class="mini-square">${sq2.innerText}</div>
-    <div class="mini-square">${sq3.innerText}</div>
-    <div class="mini-square">${sq4.innerText}</div>
-    <div class="mini-square">${sq5.innerText}</div>
-    <div class="mini-square">${sq6.innerText}</div>
-    <div class="mini-square">${sq7.innerText}</div>
-    <div class="mini-square">${sq8.innerText}</div>
-    <div class="mini-square">${sq9.innerText}</div>
-  </section>` );
-}
