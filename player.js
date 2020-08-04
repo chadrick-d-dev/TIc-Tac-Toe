@@ -5,20 +5,21 @@ class Player {
     this.wins = 0;
     this.boardArray= [];
   }
-  saveWinsToStorage() {
-    if (gameAlert.innerText === `🦁 Wins!`) {
-      var player = currentGame.player1;
-      var playerString = JSON.stringify(player);
-      localStorage.set('player1Storage', playerString);
-    } else if (gameAlert.innerText === `🐯 Wins!`) {
-      var player = currentGame.player2;
-      var playerString = JSON.stringify(player);
-      localStorage.set('player2Storage', playerString);
-    }
+  createWin(side) {
+      var winValues = [sq1.innerText,  sq2.innerText, sq3.innerText, sq4.innerText, sq5.innerText, sq6.innerText, sq7.innerText, sq8.innerText, sq9.innerText];
+      this.boardArray.push(winValues);
+      displayWin(side);
   }
-  // retrieveWinsFromStorage() {
-  //   var wins = JSON.parse()
-  //   this.wins =
-  //
-  // }
+  saveWinsToStorage(playerID) {
+    var wins = JSON.stringify(this.wins);
+    localStorage.setItem(`${playerID}wins`, wins);
+    var boards = JSON.stringify(this.boardArray);
+    localStorage.setItem(`${playerID}boards`, boards);
+  }
+  retrieveWinsFromStorage(playerID) {
+    var wins = localStorage.getItem(`${playerID}wins`);
+    this.wins = JSON.parse(wins);
+    var boards = localStorage.getItem(`${playerID}boards`);
+    this.boardArray = JSON.parse(boards);
+  }
 }

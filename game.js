@@ -1,6 +1,15 @@
 class Game {
-  constructor() {
+  constructor(sq1, sq2, sq3, sq4, sq5, sq6, sq7, sq8, sq9) {
     this.id = Date.now();
+    this.sq1 = sq1;
+    this.sq2 = sq2;
+    this.sq3 = sq3;
+    this.sq4 = sq4;
+    this.sq5 = sq5;
+    this.sq6 = sq6;
+    this.sq7 = sq7;
+    this.sq8 = sq8;
+    this.sq9 = sq9;
     this.player1 = new Player({ id: 'Player 1', token: '🦁' });
     this.player2 = new Player({ id: 'Player 2', token: '🐯' });
     this.turn = true;
@@ -27,6 +36,14 @@ class Game {
       setTimeout(function() {currentGame.resetBoard();}, 3000);
     }
   }
+  createNewIdea() {
+      var currentIdea = new Idea(titleInput.value, bodyInput.value)
+      savedIdeas.push(currentIdea);
+      currentIdea.saveToStorage(currentIdea);
+      titleInput.value = "";
+      bodyInput.value = "";
+      displayNewIdea(currentIdea);
+    }
   resetBoard() {
     this.turn = true;
     this.gameWon = false;
