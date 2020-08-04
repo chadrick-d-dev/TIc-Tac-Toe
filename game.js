@@ -8,6 +8,20 @@ class Game {
     this.player2Wins = false;
     this.gameWon = false;
   }
+  sqClick(event) {
+    var target = event.target;
+    if (target.innerText === "" && currentGame.turn === true && currentGame.gameWon === false) {
+      target.innerText = "🐯";
+      currentGame.turn = false;
+      gameAlert.innerText = `It's 🦁's turn`;
+      currentGame.gameDone(event);
+    } else if (target.innerText === "" && currentGame.turn === false && currentGame.gameWon === false) {
+      target.innerText = "🦁";
+      currentGame.turn = true;
+      gameAlert.innerText = `It's 🐯's Turn`;
+      currentGame.gameDone(event);
+    }
+  }
   gameDone() {
     if ((sq1.innerText === "🦁" && sq2.innerText === "🦁" && sq3.innerText === "🦁") || (sq4.innerText === "🦁" && sq5.innerText === "🦁" && sq6.innerText === "🦁") || (sq7.innerText === "🦁" && sq8.innerText === "🦁" && sq9.innerText === "🦁") || (sq1.innerText === "🦁" && sq4.innerText === "🦁" && sq7.innerText === "🦁") || (sq2.innerText === "🦁" && sq5.innerText === "🦁" && sq8.innerText === "🦁") || (sq3.innerText === "🦁" && sq6.innerText === "🦁" && sq9.innerText === "🦁") || (sq1.innerText === "🦁" && sq5.innerText === "🦁" && sq9.innerText === "🦁") || (sq3.innerText === "🦁" && sq5.innerText === "🦁" && sq7.innerText === "🦁")) {
       this.gameWon = true;
