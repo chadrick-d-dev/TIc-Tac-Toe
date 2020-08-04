@@ -16,11 +16,13 @@ class Game {
     var boardValues = [sq1.innerText,  sq2.innerText, sq3.innerText, sq4.innerText, sq5.innerText, sq6.innerText, sq7.innerText, sq8.innerText, sq9.innerText];
     this.gameBoard = boardValues;
   }
+  clearGameBoard() {
+    this.gameBoard = ["", "", "", "", "", "", "", "", ""];
+  }
   winConditions() {
     var board = this.gameBoard;
     if ((board[0] === '🦁' && board[1] === '🦁' && board[2] === '🦁') || (board[3] === '🦁' && board[4] === '🦁' && board[5] === '🦁') || (board[6] === '🦁' && board[7] === '🦁' && board[8] === '🦁') || (board[0] === '🦁' && board[3] === '🦁' && board[6] === '🦁') || (board[1] === '🦁' && board[4] === '🦁' && board[7] === '🦁') || (board[2] === '🦁' && board[5] === '🦁' && board[8] === '🦁') || (board[0] === '🦁' && board[4] === '🦁' && board[8] === '🦁') || (board[2] === '🦁' && board[4] === '🦁' && board[6] === '🦁')) {
       this.gameWon = true;
-      // this.p1won = true;
       this.player1.wins += 1;
       this.player1.boards.push(this.gameBoard);
       this.alert = `🦁 Wins!`;
@@ -34,6 +36,7 @@ class Game {
       this.player2.wins += 1;
       this.player2.boards.push(this.gameBoard);
       this.alert = `🐯 Wins!`;
+      this.p1wins = `${this.player1.wins} wins`;
       this.p2wins = `${this.player2.wins} wins`;
       this.player2.saveWinsToStorage("player2");
       displayWin(this.player2, rtGrid);
@@ -50,5 +53,4 @@ class Game {
       setTimeout(function() {resetBoard();}, 1500);
     }
   }
-
 }
