@@ -1,11 +1,9 @@
 class Game {
   constructor() {
     this.id = Date.now();
-    this.player1 = new Player({ id: 'Player 1', token: '🦁' });
-    this.player2 = new Player({ id: 'Player 2', token: '🐯' });
+    this.player1 = new Player({ id: 'player1', token: '🦁' });
+    this.player2 = new Player({ id: 'player2', token: '🐯' });
     this.turn = true;
-    this.player1Wins = false;
-    this.player2Wins = false;
     this.gameWon = false;
   }
   sqClick(event) {
@@ -30,7 +28,7 @@ class Game {
       gameAlert.innerText = `🦁 Wins!`;
       this.player1.createWin();
       currentGame.player1.saveWinsToStorage("player1");
-      this.displayP1win();
+      this.displayWin(this.player1, lftGrid);
       setTimeout(function() {currentGame.resetBoard();}, 1500);
     } else if ((sq1.innerText === "🐯" && sq2.innerText === "🐯" && sq3.innerText === "🐯") || (sq4.innerText === "🐯" && sq5.innerText === "🐯" && sq6.innerText === "🐯") || (sq7.innerText === "🐯" && sq8.innerText === "🐯" && sq9.innerText === "🐯") || (sq1.innerText === "🐯" && sq4.innerText === "🐯" && sq7.innerText === "🐯") || (sq2.innerText === "🐯" && sq5.innerText === "🐯" && sq8.innerText === "🐯") || (sq3.innerText === "🐯" && sq6.innerText === "🐯" && sq9.innerText === "🐯") || (sq1.innerText === "🐯" && sq5.innerText === "🐯" && sq9.innerText === "🐯") || (sq3.innerText === "🐯" && sq5.innerText === "🐯" && sq7.innerText === "🐯")) {
       this.gameWon = true;
@@ -39,7 +37,7 @@ class Game {
       gameAlert.innerText = `🐯 Wins!`;
       this.player2.createWin();
       this.player2.saveWinsToStorage("player2");
-      this.displayP2win();
+      this.displayWin(this.player2, rtGrid);
       setTimeout(function() {currentGame.resetBoard();}, 1500);
     }else if ((sq1.innerText === "🦁" || sq1.innerText === "🐯") && (sq2.innerText === "🦁" || sq2.innerText === "🐯") && (sq3.innerText === "🦁" || sq3.innerText === "🐯") && (sq4.innerText === "🦁" || sq4.innerText === "🐯") && (sq5.innerText === "🦁" || sq5.innerText === "🐯") && (sq6.innerText === "🦁" || sq6.innerText === "🐯") && (sq7.innerText === "🦁" || sq7.innerText === "🐯") && (sq8.innerText === "🦁" || sq8.innerText === "🐯") && (sq9.innerText === "🦁" || sq9.innerText === "🐯")) {
       this.gameWon = true;
@@ -61,42 +59,23 @@ class Game {
     sq8.innerText = "";
     sq9.innerText = "";
   }
-  displayP1win() {
-    var boards = localStorage.getItem("player1boards");
-    this.player1.boardArray = JSON.parse(boards);
-    var p1Array = this.player1.boardArray;
-    lftGrid.innerHTML = "";
-      for (var i=0; i< p1Array.length; i++) {
-        lftGrid.insertAdjacentHTML('beforeend', `<section class="mini-game">
-            <div class="mini-square">${p1Array[i][0]}</div>
-            <div class="mini-square">${p1Array[i][1]}</div>
-            <div class="mini-square">${p1Array[i][2]}</div>
-            <div class="mini-square">${p1Array[i][3]}</div>
-            <div class="mini-square">${p1Array[i][4]}</div>
-            <div class="mini-square">${p1Array[i][5]}</div>
-            <div class="mini-square">${p1Array[i][6]}</div>
-            <div class="mini-square">${p1Array[i][7]}</div>
-            <div class="mini-square">${p1Array[i][8]}</div>
-          </section>` );
+  displayWin(player, side) {
+      player.retrieveWinsFromStorage(player.id);
+      var pArray = player.boardArray;
+      console.log(player);
+      side.innerHTML = "";
+        for (var i=0; i< pArray.length; i++) {
+          side.insertAdjacentHTML('beforeend', `<section class="mini-game">
+              <div class="mini-square">${pArray[i][0]}</div>
+              <div class="mini-square">${pArray[i][1]}</div>
+              <div class="mini-square">${pArray[i][2]}</div>
+              <div class="mini-square">${pArray[i][3]}</div>
+              <div class="mini-square">${pArray[i][4]}</div>
+              <div class="mini-square">${pArray[i][5]}</div>
+              <div class="mini-square">${pArray[i][6]}</div>
+              <div class="mini-square">${pArray[i][7]}</div>
+              <div class="mini-square">${pArray[i][8]}</div>
+            </section>` );
         }
     }
-    displayP2win() {
-      var boards = localStorage.getItem("player2boards");
-      this.player2.boardArray = JSON.parse(boards);
-      var p2Array = this.player2.boardArray;
-      rtGrid.innerHTML = "";
-        for (var i=0; i< p2Array.length; i++) {
-          rtGrid.insertAdjacentHTML('beforeend', `<section class="mini-game">
-              <div class="mini-square">${p2Array[i][0]}</div>
-              <div class="mini-square">${p2Array[i][1]}</div>
-              <div class="mini-square">${p2Array[i][2]}</div>
-              <div class="mini-square">${p2Array[i][3]}</div>
-              <div class="mini-square">${p2Array[i][4]}</div>
-              <div class="mini-square">${p2Array[i][5]}</div>
-              <div class="mini-square">${p2Array[i][6]}</div>
-              <div class="mini-square">${p2Array[i][7]}</div>
-              <div class="mini-square">${p2Array[i][8]}</div>
-            </section>` );
-          }
-      }
 }
