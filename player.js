@@ -6,9 +6,9 @@ class Player {
     this.boardArray= [];
   }
   createWin(side) {
-      var winValues = [sq1.innerText,  sq2.innerText, sq3.innerText, sq4.innerText, sq5.innerText, sq6.innerText, sq7.innerText, sq8.innerText, sq9.innerText];
-      this.boardArray.push(winValues);
-      displayWin(side);
+    var winValues = [sq1.innerText,  sq2.innerText, sq3.innerText, sq4.innerText, sq5.innerText, sq6.innerText, sq7.innerText, sq8.innerText, sq9.innerText];
+    this.boardArray.push(winValues);
+    displayWin(side);
   }
   saveWinsToStorage(playerID) {
     var wins = JSON.stringify(this.wins);
