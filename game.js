@@ -61,20 +61,20 @@ class Game {
   }
   displayWin(player, side) {
       player.retrieveWinsFromStorage(player.id);
-      var pArray = player.boardArray;
+      var pBoards = player.boards;
       console.log(player);
       side.innerHTML = "";
-        for (var i=0; i< pArray.length; i++) {
+        for (var i=0; i< pBoards.length; i++) {
           side.insertAdjacentHTML('beforeend', `<section class="mini-game">
-              <div class="mini-square">${pArray[i][0]}</div>
-              <div class="mini-square">${pArray[i][1]}</div>
-              <div class="mini-square">${pArray[i][2]}</div>
-              <div class="mini-square">${pArray[i][3]}</div>
-              <div class="mini-square">${pArray[i][4]}</div>
-              <div class="mini-square">${pArray[i][5]}</div>
-              <div class="mini-square">${pArray[i][6]}</div>
-              <div class="mini-square">${pArray[i][7]}</div>
-              <div class="mini-square">${pArray[i][8]}</div>
+              <div class="mini-square">${pBoards[i][0]}</div>
+              <div class="mini-square">${pBoards[i][1]}</div>
+              <div class="mini-square">${pBoards[i][2]}</div>
+              <div class="mini-square">${pBoards[i][3]}</div>
+              <div class="mini-square">${pBoards[i][4]}</div>
+              <div class="mini-square">${pBoards[i][5]}</div>
+              <div class="mini-square">${pBoards[i][6]}</div>
+              <div class="mini-square">${pBoards[i][7]}</div>
+              <div class="mini-square">${pBoards[i][8]}</div>
             </section>` );
         }
     }
