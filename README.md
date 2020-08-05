@@ -1,8 +1,8 @@
 # TIc-Tac-Toe
-The README is formatted well and contains:
-Overview of project and goals
-Overview of technologies used, your code architecture, challenges, wins, and any other reflections
-Screenshots/gifs of your app
+
+- Contributor: Chadrick Dickerson
+- Contributor-Page: https://github.com/chadrick-d-dev
+- Repo-Link: https://github.com/chadrick-d-dev/TIc-Tac-Toe
 
 ## Overview of project
 In this project I was expected to create a fully functioning and amusing Tic Tac Toe game app!
