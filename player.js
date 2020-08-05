@@ -15,6 +15,6 @@ class Player {
     var wins = localStorage.getItem(`${playerID}wins`);
     this.wins = JSON.parse(wins);
     var boards = localStorage.getItem(`${playerID}boards`);
-    this.boardArray = JSON.parse(boards);
+    this.boards = JSON.parse(boards);
   }
 }
