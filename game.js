@@ -49,14 +49,4 @@ class Game {
       setTimeout(function() {resetBoard();}, 1500);
     }
   }
-  //
-  // drawCondition() {
-  //   var board = this.gameBoard;
-  //   if ((board[0] === "🦁" || board[0] === "🐯") && (board[1] === "🦁" || board[1] === "🐯") && (board[2] === "🦁" || board[2] === "🐯") && (board[3] === "🦁" || board[3] === "🐯") && (board[4] === "🦁" || board[4] === "🐯") && (board[5] === "🦁" || board[5] === "🐯") && (board[6] === "🦁" || board[6] === "🐯") && (board[7] === "🦁" || board[7] === "🐯") && (board[8] === "🦁" || board[8] === "🐯")) {
-  //     this.gameWon = false;
-  //     this.alert = `It's a draw!`;
-  //     updateTitles();
-  //     setTimeout(function() {resetBoard();}, 1500);
-  //   }
-  // }
 }
