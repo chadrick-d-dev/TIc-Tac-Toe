@@ -1,5 +1,4 @@
 var gameGrid = document.querySelector(".game-grid");
-var gameSquare = document.querySelector(".game-square");
 var sq1 = document.querySelector("#square-1");
 var sq2 = document.querySelector("#square-2");
 var sq3 = document.querySelector("#square-3");
@@ -27,14 +26,12 @@ function sqClick(event) {
     currentGame.turn = false;
     gameAlert.innerText = `It's 🦁's turn`;
     currentGame.winConditions();
-    currentGame.drawCondition();
   } else if (target.innerText === "" && currentGame.turn === false && currentGame.gameWon === false) {
     target.innerText = "🦁";
     currentGame.trackGameBoard();
     currentGame.turn = true;
     gameAlert.innerText = `It's 🐯's Turn`;
     currentGame.winConditions();
-    currentGame.drawCondition();
   }
 }
 
